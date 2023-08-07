@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+.debug {
+  border: 1px solid purple;
+}
+
+html,
+body,
+main {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#drawer {
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  transform: translate(250px, 0);
+  transition: transform 0.3s ease-in-out;
+  background-color: #606060;
+}
+
+#drawer.open {
+  transform: translate(0, 0)
+}
+
+#drawer ul {
+  list-style-type: none;
+  padding: 0 16px;
+}
+
+#drawer li {
+  padding: 5px 0px;
+  border-bottom: 1px white solid;
+}
+
+#drawer li:hover {
+  padding: 5px 0px;
+  border-bottom: 1px rgb(233, 160, 133) solid;
+}
+
+#drawer a {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  width: 100;
+}
+
+#hamburger {
+  font-size: 32px;
+  text-decoration: none;
+  color: black;
+}
+
+
+.close-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.app-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#close-btn {
+  padding: 10px;
+  margin-right: 8px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 4px 8px;
+  background-color: #555555;
+  color: rgb(200, 200, 200);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+@media screen and (min-width: 600px) {
+
+  header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  #drawer {
+    width: fit-content;
+    position: relative;
+    height: unset;
+    display: flex;
+    flex-direction: row;
+    top: unset;
+    right: unset;
+    transform: translate(0, 0);
+    padding-right: 50px;
+  }
+
+  #drawer li {
+    width: 75px;
+    text-align: center;
+  }
+
+  #drawer ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  #drawer a {
+    font-size: 16px;
+    word-wrap: unset;
+    width: 200px;
+  }
+
+
+
+
+  #hamburger,
+  .close-btn-container {
+    display: none;
+  }
+}
