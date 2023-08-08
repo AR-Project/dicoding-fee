@@ -19,6 +19,14 @@ h1 {
   font-family: 'Arvo', serif;
 }
 
+a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 45px;
+  min-width: 45px;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -30,6 +38,15 @@ header {
   background: rgb(236, 236, 236);
   background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(255, 255, 255, 1) 69%);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 6px, rgba(0, 0, 0, 0.5) 0px 3px 6px;
+}
+
+header>.container {
+  min-height: 75px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
 }
 
 #drawer {
@@ -56,21 +73,34 @@ header {
 }
 
 #drawer li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 5px 0px;
   margin-bottom: 10px;
-  border-bottom: 3px rgba(255, 255, 255, 0) solid;
+  transition: 0.2s ease-in-out;
+  border-bottom: 2px rgba(86, 86, 86, 0.625) solid;
 }
 
 #drawer li:hover {
   padding: 5px 0px;
-  border-bottom: 3px rgb(233, 160, 133) solid;
+  background-color: rgba(249, 196, 177, 0.379);
+  border-bottom: 2px rgb(214, 129, 98) solid;
 }
 
 #drawer a {
   text-decoration: none;
   font-size: 25px;
   color: rgb(86, 86, 86);
-  width: 100;
+}
+
+#drawer li a {
+  width: 100%;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #hamburger {
@@ -117,7 +147,7 @@ header {
 
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -45px;
   left: 0;
   padding: 4px 8px;
   background-color: #555555;
@@ -216,6 +246,7 @@ footer {
 
 footer .container {
   margin: 0 auto;
+  text-align: center;
 }
 
 .spacer {
@@ -229,6 +260,7 @@ footer .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 .random-food-container>img {
@@ -246,8 +278,15 @@ footer .container {
   text-align: justify !important;
 }
 
+.random-food-container a {
+  border: 1px rgb(23, 23, 44) solid;
+  padding: 0 40px;
+  color: rgb(23, 23, 44);
+  background-color: rgba(255, 255, 255, 0.423);
+}
 
-@media screen and (min-width: 600px) {
+
+@media screen and (min-width: 800px) {
   header .container {
     display: flex;
     flex-direction: row;
@@ -255,8 +294,6 @@ footer .container {
     max-width: 1000px;
     margin: 0 auto;
   }
-
-
 
   #drawer {
     width: fit-content;
@@ -267,16 +304,14 @@ footer .container {
     top: unset;
     right: unset;
     transform: translate(0, 0);
-    padding-right: 50px;
     padding-bottom: unset;
     border-radius: unset;
     box-shadow: unset;
     background-color: unset;
-
   }
 
   #drawer li {
-    width: 75px;
+    /* width: 75px; */
     text-align: center;
   }
 
@@ -288,8 +323,11 @@ footer .container {
 
   #drawer a {
     font-size: 16px;
-    word-wrap: unset;
-    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
   }
 
   #hamburger,
