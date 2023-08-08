@@ -8,30 +8,51 @@
 </head>
 
 <body>
-  <a href="#maincontent" class="skip-link">Menuju ke konten</a>
+  <a href="#skiplink-target" class="skip-link">Menuju ke konten</a>
   <header>
-    <div class="app-logo debug">
-      <div class="logo">
-        Isi Piring
+    <div class="container">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="/images/icons/icon.png" alt="Isi Piring icon">
+          Isi Piring
+        </div>
+        <a id="hamburger" href="#">☰</a>
       </div>
-      <a id="hamburger" href="#">☰</a>
+      <nav id="drawer">
+        <div class="close-btn-container">
+          <a id="close-btn" href="#">&#10006;</a>
+        </div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Favorite</a></li>
+          <li><a href="http://arproject.my.id">About Us</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav id="drawer">
-      <div class="close-btn-container debug">
-        <a id="close-btn" href="#">&#10006;</a>
-      </div>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#">Favorite</a></li>
-        <li><a href="http://arproject.my.id">About Us</a></li>
-      </ul>
-    </nav>
 
   </header>
-  <main id="maincontent">
-    This is main content
+  <section class="hero-image-container">
+    <img class="hero-image" src="/images/heros/hero-image_4.jpg"
+      alt="Beautiful arrangement of food on plate with flower">
+  </section>
+  <main id="maincontent" tabindex="0">
+    <h1 id="skiplink-target">
+      Jelajah isi piring
+    </h1>
+    <p>Kami menampilkan beberapa tempat makan yang cocok dengan selera anda.</p>
+    <resto-list></resto-list>
+    <div class="spacer"></div>
+    <h1 id="skiplink-target">
+      Bingung makan apa?
+    </h1>
+    <p>Kalau ingin masak sendiri, coba resep hari ini.</p>
+    <div class="random-food-container" tabindex="0"></div>
   </main>
-
+  <footer>
+    <div class="container">
+      Copyright © 2023 - Alven Resta - Front End Expert Class
+    </div>
+  </footer>
 </body>
 
 </html>
