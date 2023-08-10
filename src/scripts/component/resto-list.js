@@ -1,7 +1,7 @@
 import './resto-item.js';
 
 class RestoList extends HTMLElement {
-  set restaurants(restaurants) {
+  set restaurants(restaurants = []) {
     this._restaurants = restaurants;
     this.render();
   }
