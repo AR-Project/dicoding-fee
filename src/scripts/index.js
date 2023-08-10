@@ -3,29 +3,23 @@ import '../styles/main.css';
 import '../scripts/component/resto-list.js'
 import getRandomFood from './component/service/random-food';
 import data from '../public/data/DATA.json'
-import { async } from 'regenerator-runtime';
+import App from './views/app';
 
 const hamburgerButtonElement = document.querySelector('#hamburger');
 const drawerCloseBtnElement = document.querySelector('#close-btn')
 const drawerElement = document.querySelector('#drawer');
 const mainElement = document.querySelector('#maincontent');
+
+const app = new App({
+  drawer: drawerElement,
+  hamburgerBtn: hamburgerButtonElement,
+  drawerCloseBtn: drawerCloseBtnElement,
+  main: mainElement,
+})
+
+// @TODO move to pages
 const restoList = document.querySelector('resto-list')
 const randomFood = document.querySelector('.random-food-container')
-
-hamburgerButtonElement.addEventListener('click', event => {
-  drawerElement.classList.toggle('open');
-  event.stopPropagation();
-});
-
-drawerCloseBtnElement.addEventListener('click', event => {
-  drawerElement.classList.remove('open');
-  event.stopPropagation();
-})
-
-mainElement.addEventListener('click', event => {
-  drawerElement.classList.remove('open');
-  event.stopPropagation();
-})
 
 restoList.restaurants = data.restaurants;
 
