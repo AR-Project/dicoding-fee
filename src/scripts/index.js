@@ -2,8 +2,8 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../scripts/component/resto-list.js'
 import getRandomFood from './component/service/random-food';
-import data from '../public/data/DATA.json'
 import App from './views/app';
+import RestaurantApi from './data/RestaurantApiSource';
 
 const hamburgerButtonElement = document.querySelector('#hamburger');
 const drawerCloseBtnElement = document.querySelector('#close-btn')
@@ -21,7 +21,8 @@ const app = new App({
 const restoList = document.querySelector('resto-list')
 const randomFood = document.querySelector('.random-food-container')
 
-restoList.restaurants = data.restaurants;
+restoList.restaurants = await RestaurantApi.getList();
+
 
 document.addEventListener('DOMContentLoaded', async () => {
   const { meals } = await getRandomFood();
