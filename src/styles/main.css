@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+:root {
+  --accent: rgb(221, 163, 17);
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
+  color: rgb(204, 204, 204);
 }
 
 .debug {
@@ -20,6 +25,7 @@ h1 {
 }
 
 a {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -30,14 +36,18 @@ a {
 body {
   padding: 0;
   margin: 0;
-  background-color: rgb(255, 208, 189);
+  background-color: rgb(32, 32, 32);
   font-family: 'Lato', sans-serif;
+  background-image: url("../public/images/assets/bg.webp");
+  background-repeat: repeat;
+  background-position: 0;
 }
 
 header {
-  background: rgb(236, 236, 236);
+  background: rgba(0, 0, 0, 0.368);
+  /*
   background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(255, 255, 255, 1) 69%);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 6px, rgba(0, 0, 0, 0.5) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 6px, rgba(0, 0, 0, 0.5) 0px 3px 6px; */
 }
 
 header>.container {
@@ -59,7 +69,7 @@ header>.container {
   border-radius: 10px;
   transform: translate(0, -450px);
   transition: transform 0.4s ease-in-out;
-  background-color: whitesmoke;
+  background-color: var(--accent);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -85,13 +95,13 @@ header>.container {
 #drawer li:hover {
   padding: 5px 0px;
   background-color: rgba(249, 196, 177, 0.379);
-  border-bottom: 2px rgb(214, 129, 98) solid;
+  border-bottom: 2px rgb(255, 255, 255) solid;
 }
 
 #drawer a {
   text-decoration: none;
   font-size: 25px;
-  color: rgb(86, 86, 86);
+  color: rgb(27, 27, 27);
 }
 
 #drawer li a {
@@ -107,7 +117,7 @@ header>.container {
   font-size: 32px;
   padding: 5px 15px;
   text-decoration: none;
-  color: black;
+  color: rgb(235, 235, 235);
 }
 
 .close-btn-container {
@@ -122,6 +132,7 @@ header>.container {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  color: black;
 }
 
 .logo-container .logo {
@@ -135,9 +146,16 @@ header>.container {
 }
 
 .logo-container .logo img {
-
   margin: 0 10px;
   width: 35px;
+}
+
+.logo-link .logo {
+  color: var(--accent)
+}
+
+.logo-link {
+  text-decoration: none;
 }
 
 #close-btn {
@@ -182,6 +200,7 @@ header>.container {
 .content h1 {
   padding-top: 20px;
   text-align: center;
+  color: var(--accent);
 }
 
 .content p {
@@ -201,13 +220,31 @@ resto-item {
   border-radius: 5px;
 }
 
+resto-item a {
+  text-decoration: none;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--accent);
+}
+
+resto-item h3 {
+  margin: 0;
+  line-height: 2rem;
+}
+
 resto-item .rating {
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
   top: 0;
   font-size: 1.4rem;
   font-weight: bolder;
-  background-color: rgba(255, 255, 255, 0.757);
-  padding: 2px 4px;
+  color: var(--accent);
+  background-color: rgba(0, 0, 0, 0.696);
+  padding: 7px 17px 7px 7px;
+  border-radius: 0 0 10px 0;
 }
 
 resto-item .name {
@@ -216,10 +253,18 @@ resto-item .name {
 }
 
 resto-item .city {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
   font-size: 0.9rem;
   font-style: italic;
-  opacity: 0.5;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  color: #a8a8a8;
+}
+
+resto-item svg {
+  fill: var(--accent);
 }
 
 resto-item img {
@@ -242,7 +287,7 @@ footer {
   width: 100%;
   font-size: 0.85rem;
   color: rgb(159, 159, 159);
-  background-color: rgb(23, 23, 36);
+  background-color: rgb(16, 16, 19);
 }
 
 footer .container {
@@ -320,6 +365,12 @@ f .spacer {
   #drawer li {
     /* width: 75px; */
     text-align: center;
+    color: white;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.325);
+  }
+
+  #drawer li:hover {
+    border-bottom: 3px solid var(--accent);
   }
 
   #drawer ul {
@@ -334,6 +385,7 @@ f .spacer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
     width: 100px;
   }
 

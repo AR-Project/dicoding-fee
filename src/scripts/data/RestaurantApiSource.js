@@ -41,7 +41,10 @@ class RestaurantApi {
   static async getDetail(restaurantId) {
     const rawResponse = await fetch(API_ENDPOINT.DETAIL_RESTAURANT(restaurantId));
     const response = await rawResponse.json();
-    return response.restaurant;
+    return {
+      ...response.restaurant,
+      pictureId: API_ENDPOINT.IMAGE(response.restaurant.pictureId, 'l'),
+    };
   }
 
   /**
