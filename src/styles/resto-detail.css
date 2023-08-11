@@ -124,8 +124,45 @@ resto-detail .reviews-container .date {
   margin-bottom: 5px;
 }
 
+#like-button-container {
+  position: fixed;
+  bottom: 80px;
+  right: 35px;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#likeButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.383);
+  border: 1px solid var(--accent);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+#like-button-container svg path {
+  fill: var(--accent);
+}
+
+#like-button-container svg {
+  width: 25px;
+  height: 25px;
+}
+
 @media screen and (min-width: 800px) {
   resto-detail {
     padding: 60px 0;
+  }
+
+  #like-button-container {
+    bottom: 100px;
+    right: 50vw;
+    transform: translate(50%);
   }
 }

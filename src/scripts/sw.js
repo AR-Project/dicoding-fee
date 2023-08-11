@@ -19,9 +19,9 @@ const assetsToCache = [
   './sw.bundle.js',
 ];
 
-
 self.addEventListener('install', (event) => {
   console.log('Installing Service Worker ...');
+  self.skipWaiting();
   event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]));
 });
 
@@ -33,6 +33,4 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   console.log(event.request);
   event.respondWith(CacheHelper.revalidateCache(event.request));
-  // event.respondWith(fetch(event.request));
-
 });
