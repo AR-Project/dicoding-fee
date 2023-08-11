@@ -1,17 +1,18 @@
 const DrawerInitiator = {
-  init({ drawer, hamburgerBtn, drawerCloseBtn, main }) {
+  init({
+    drawer, hamburgerBtn, drawerCloseBtn, main,
+  }) {
     hamburgerBtn.addEventListener('click', (event) => {
       this._toggleDrawer(event, drawer);
-    })
+    });
 
     drawerCloseBtn.addEventListener('click', (event) => {
       this._closeDrawer(event, drawer);
-    })
+    });
 
     main.addEventListener('click', (event) => {
       this._closeDrawer(event, drawer);
-    })
-
+    });
   },
 
   _toggleDrawer(event, drawer) {
@@ -23,6 +24,6 @@ const DrawerInitiator = {
     event.stopPropagation();
     drawer.classList.remove('open');
   },
-}
+};
 
 export default DrawerInitiator;

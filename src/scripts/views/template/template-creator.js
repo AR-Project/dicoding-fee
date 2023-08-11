@@ -1,4 +1,4 @@
-import icon from "./icons";
+import icon from './icons';
 
 const createLikeButtonTemplate = () => `
 <button aria-label="like this movie" id="likeButton" class="like">
@@ -13,4 +13,3 @@ const createLikedButtonTemplate = () => `
 `;
 
 export { createLikeButtonTemplate, createLikedButtonTemplate };
-

@@ -1,4 +1,4 @@
-import icon from "../views/template/icons";
+import icon from '../views/template/icons';
 
 class RestoDetail extends HTMLElement {
   set restaurant(restaurantDetail = {}) {
@@ -11,42 +11,42 @@ class RestoDetail extends HTMLElement {
     const {
       pictureId, categories, name,
       rating, address, description,
-      city, menus, customerReviews
+      city, menus, customerReviews,
     } = this._restaurantDetail;
 
     const divMaker = (className, content) => {
       const div = document.createElement('div');
-      div.classList.add(className)
+      div.classList.add(className);
       div.innerHTML = content;
       return div;
-    }
+    };
 
     const customersReviews = () => {
       const reviewsContainer = document.createElement('div');
       reviewsContainer.classList.add('reviews-container');
       const title = document.createElement('h3');
-      title.innerHTML = " Review Pengunjung"
-      reviewsContainer.append(title)
+      title.innerHTML = ' Review Pengunjung';
+      reviewsContainer.append(title);
 
       customerReviews.forEach((review) => {
-        const singleReview = document.createElement('div')
-        singleReview.classList.add('review')
+        const singleReview = document.createElement('div');
+        singleReview.classList.add('review');
         singleReview.append(
           divMaker('name', review.name),
           divMaker('date', review.date),
-          divMaker('review', review.review)
-        )
+          divMaker('review', review.review),
+        );
         reviewsContainer.append(singleReview);
-      })
+      });
       return reviewsContainer.outerHTML;
     };
 
     const categoryElm = () => {
-      let result = ''
-      categories.forEach(c => {
-        result += divMaker('category', `#${c.name}`).outerHTML
-      })
-      return result
+      let result = '';
+      categories.forEach((c) => {
+        result += divMaker('category', `#${c.name}`).outerHTML;
+      });
+      return result;
     };
 
     this.innerHTML = `
@@ -71,7 +71,7 @@ class RestoDetail extends HTMLElement {
       ${customersReviews()}
     `;
     // @TODO add favorite Button
-    // @TODO add review form 
+    // @TODO add review form
   }
 
   _itemMenuGenerator(type, menus) {
@@ -79,14 +79,13 @@ class RestoDetail extends HTMLElement {
     menus[`${type}s`].forEach((item) => {
       const list = document.createElement('li');
       list.innerHTML = item.name;
-      itemMenuList.append(list)
-    })
+      itemMenuList.append(list);
+    });
 
-    const itemMenuElm = document.createElement('div')
+    const itemMenuElm = document.createElement('div');
     itemMenuElm.classList.add(type);
 
-
-    itemMenuElm.append(itemMenuList)
+    itemMenuElm.append(itemMenuList);
 
     return itemMenuElm.outerHTML;
   }

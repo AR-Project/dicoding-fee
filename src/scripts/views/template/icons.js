@@ -56,7 +56,7 @@ const icon = {
         </g>
       </g>
     </svg>
-  `
-}
+  `,
+};
 
 export default icon;

@@ -1,4 +1,4 @@
-import getRandomFood from "../../data/RandomFoodSource";
+import getRandomFood from '../../data/RandomFoodSource';
 
 const RandomFood = {
   async render() {
@@ -6,11 +6,11 @@ const RandomFood = {
     contentElement.classList.add('content');
 
     const title = document.createElement('h1');
-    title.id = 'skiplink-target',
-      title.innerHTML = 'Bingung makan apa?'
+    title.id = 'skiplink-target';
+    title.innerHTML = 'Bingung makan apa?';
 
     const desc = document.createElement('p');
-    desc.innerHTML = 'Kalau ingin masak sendiri, coba resep hari ini'
+    desc.innerHTML = 'Kalau ingin masak sendiri, coba resep hari ini';
 
     const randomFoodContainer = document.createElement('div');
     randomFoodContainer.classList.add('random-food-container');
@@ -19,7 +19,7 @@ const RandomFood = {
       title,
       desc,
       randomFoodContainer,
-    )
+    );
 
     return contentElement.outerHTML;
   },
@@ -31,7 +31,7 @@ const RandomFood = {
       strMeal: mealName,
       strMealThumb: mealPhoto,
       strInstructions: mealDesc,
-      strSource: mealSource
+      strSource: mealSource,
     } = meals[0];
 
     const title = document.createElement('h2');
@@ -46,14 +46,14 @@ const RandomFood = {
     desc.innerHTML = excerpt.length > 40 ? excerpt.slice(0, 40).concat(['...']).join(' ') : excerpt;
 
     const source = document.createElement('a');
-    source.innerHTML = 'Selengkapnya'
+    source.innerHTML = 'Selengkapnya';
     source.href = mealSource;
-    source.target = '_blank'
+    source.target = '_blank';
 
     // Append Data
-    const randomFood = document.querySelector('.random-food-container')
+    const randomFood = document.querySelector('.random-food-container');
     randomFood.append(foodImage, title, desc, source);
-  }
-}
+  },
+};
 
 export default RandomFood;

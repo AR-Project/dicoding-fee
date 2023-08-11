@@ -1,4 +1,4 @@
-import icon from "../views/template/icons";
+import icon from '../views/template/icons';
 
 class RestoItem extends HTMLElement {
   set restaurant(restaurant) {
@@ -8,8 +8,10 @@ class RestoItem extends HTMLElement {
   }
 
   render() {
-    const { id: restaurantId, pictureId, name, rating, city } = this._restaurant;
-    const description = this._restaurant.description.split(' ').slice(0, 20).concat(['...']).join(' ')
+    const {
+      id: restaurantId, pictureId, name, rating, city,
+    } = this._restaurant;
+    const description = this._restaurant.description.split(' ').slice(0, 20).concat(['...']).join(' ');
 
     this.innerHTML = `
       <a href="#/detail/${restaurantId}">

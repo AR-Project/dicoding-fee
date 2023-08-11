@@ -1,9 +1,11 @@
-import routes from "../routes/routes";
-import UrlParser from "../routes/url-parser";
-import DrawerInitiator from "../utils/DrawerInitiator";
+import routes from '../routes/routes';
+import UrlParser from '../routes/url-parser';
+import DrawerInitiator from '../utils/DrawerInitiator';
 
 class App {
-  constructor({ drawer, hamburgerBtn, drawerCloseBtn, main }) {
+  constructor({
+    drawer, hamburgerBtn, drawerCloseBtn, main,
+  }) {
     this._drawer = drawer;
     this._hamburgerBtn = hamburgerBtn;
     this._drawerCloseBtn = drawerCloseBtn;
@@ -18,7 +20,7 @@ class App {
       hamburgerBtn: this._hamburgerBtn,
       drawerCloseBtn: this._drawerCloseBtn,
       main: this._main,
-    })
+    });
   }
 
   async renderPage() {

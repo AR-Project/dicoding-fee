@@ -1,4 +1,4 @@
-import CacheHelper from "./utils/cache-helper";
+import CacheHelper from './utils/cache-helper';
 
 const assetsToCache = [
   './',
