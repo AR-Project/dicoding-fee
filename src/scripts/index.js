@@ -3,6 +3,7 @@ import '../styles/main.css';
 import '../styles/resto-detail.css'
 import '../scripts/component/resto-list.js'
 import '../scripts/component/resto-detail.js'
+import swRegister from './utils/sw-register';
 import App from './views/app';
 
 const hamburgerButtonElement = document.querySelector('#hamburger');
@@ -23,5 +24,6 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
 
