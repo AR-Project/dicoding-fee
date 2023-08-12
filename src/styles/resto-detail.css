@@ -132,6 +132,7 @@ resto-detail .reviews-container .date {
   max-width: 700px;
   display: flex;
   justify-content: flex-end;
+  pointer-events: none;
 }
 
 #likeButton {
@@ -144,6 +145,7 @@ resto-detail .reviews-container .date {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  pointer-events: all;
 }
 
 #like-button-container svg path {
@@ -153,6 +155,41 @@ resto-detail .reviews-container .date {
 #like-button-container svg {
   width: 25px;
   height: 25px;
+}
+
+#review-form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 100px;
+}
+
+#review-form #name,
+#review-form textarea,
+#review-form button {
+  border-radius: 7px;
+}
+
+#review-form #name,
+#review-form button {
+  height: 45px;
+}
+
+#review-form #name,
+#review-form textarea {
+  color: black;
+  padding: 10px 7px;
+}
+
+#review-form button {
+  color: black;
+  background-color: var(--accent);
+  border: 2px solid black;
+  font-weight: bolder;
+
 }
 
 @media screen and (min-width: 800px) {

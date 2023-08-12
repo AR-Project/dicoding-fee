@@ -7,6 +7,15 @@ class RestoDetail extends HTMLElement {
     this.render();
   }
 
+  set reviews(newReviews = []) {
+    const prevRestaurant = this._restaurantDetail;
+    this._restaurantDetail = {
+      ...prevRestaurant,
+      customerReviews: newReviews,
+    };
+    this.render();
+  }
+
   render() {
     const {
       pictureId, categories, name,
@@ -70,8 +79,6 @@ class RestoDetail extends HTMLElement {
       </div>
       ${customersReviews()}
     `;
-    // @TODO add favorite Button
-    // @TODO add review form
   }
 
   _itemMenuGenerator(type, menus) {

@@ -12,4 +12,11 @@ const createLikedButtonTemplate = () => `
 </button>
 `;
 
-export { createLikeButtonTemplate, createLikedButtonTemplate };
+const reviewFormTemplate = () => `
+<form id="review-form">
+  <input type="text" name="name" id="name" placeholder="Nama anda" required>
+  <textarea name="review" id="review" cols="30" rows="10" placeholder="Bagaimana pendapat anda tentang restaurant ini?" required></textarea >
+  <button type="submit">Buat Review</button>
+</form>`;
+
+export { createLikeButtonTemplate, createLikedButtonTemplate, reviewFormTemplate };
