@@ -10,12 +10,14 @@ const hamburgerButtonElement = document.querySelector('#hamburger');
 const drawerCloseBtnElement = document.querySelector('#close-btn');
 const drawerElement = document.querySelector('#drawer');
 const mainElement = document.querySelector('#maincontent');
+const loading = document.querySelector('#loading-container');
 
 const app = new App({
   drawer: drawerElement,
   hamburgerBtn: hamburgerButtonElement,
   drawerCloseBtn: drawerCloseBtnElement,
   main: mainElement,
+  loading,
 });
 
 window.addEventListener('hashchange', () => {
