@@ -4,13 +4,14 @@ import DrawerInitiator from '../utils/DrawerInitiator';
 
 class App {
   constructor({
-    drawer, hamburgerBtn, drawerCloseBtn, main, loading,
+    drawer, hamburgerBtn, drawerCloseBtn, main, loading, skipLinkElem,
   }) {
     this._drawer = drawer;
     this._hamburgerBtn = hamburgerBtn;
     this._drawerCloseBtn = drawerCloseBtn;
     this._main = main;
     this._loading = loading;
+    this._skipLinkElem = skipLinkElem;
 
     this._initialAppShell();
   }
@@ -34,7 +35,12 @@ class App {
       await page.afterRender();
       this._hideLoading();
     } catch (error) {
-      alert('Ada masalah. Silahkan refresh browser anda');
+      alert('Ada masalah jaringan. Silahkan refresh browser anda');
+    } finally {
+      this._skipLinkElem.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.querySelector('#maincontent').focus();
+      });
     }
   }
 

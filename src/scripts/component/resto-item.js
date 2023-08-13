@@ -3,7 +3,6 @@ import icon from '../views/template/icons';
 class RestoItem extends HTMLElement {
   set restaurant(restaurant) {
     this._restaurant = restaurant;
-    this.tabIndex = '0';
     this.render();
   }
 

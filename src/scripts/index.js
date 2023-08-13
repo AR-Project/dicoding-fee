@@ -11,6 +11,7 @@ const drawerCloseBtnElement = document.querySelector('#close-btn');
 const drawerElement = document.querySelector('#drawer');
 const mainElement = document.querySelector('#maincontent');
 const loading = document.querySelector('#loading-container');
+const skipLinkElem = document.querySelector('.skip-link');
 
 const app = new App({
   drawer: drawerElement,
@@ -18,6 +19,7 @@ const app = new App({
   drawerCloseBtn: drawerCloseBtnElement,
   main: mainElement,
   loading,
+  skipLinkElem,
 });
 
 window.addEventListener('hashchange', () => {

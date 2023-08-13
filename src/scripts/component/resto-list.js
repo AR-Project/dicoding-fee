@@ -8,7 +8,6 @@ class RestoList extends HTMLElement {
 
   render() {
     this.innerHTML = '';
-    this.tabIndex = '0';
     this._restaurants.forEach((item) => {
       const restoItemElement = document.createElement('resto-item');
       restoItemElement.restaurant = item;
