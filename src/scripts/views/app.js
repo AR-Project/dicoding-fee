@@ -1,10 +1,12 @@
 import routes from '../routes/routes';
 import UrlParser from '../routes/url-parser';
 import DrawerInitiator from '../utils/DrawerInitiator';
+import errorSplash from './overlay/error';
+import loadingScreen from './overlay/loading';
 
 class App {
   constructor({
-    drawer, hamburgerBtn, drawerCloseBtn, main, loading, skipLinkElem,
+    drawer, hamburgerBtn, drawerCloseBtn, main, loading, skipLinkElem, body,
   }) {
     this._drawer = drawer;
     this._hamburgerBtn = hamburgerBtn;
@@ -12,6 +14,7 @@ class App {
     this._main = main;
     this._loading = loading;
     this._skipLinkElem = skipLinkElem;
+    this._body = body;
 
     this._initialAppShell();
   }
@@ -26,38 +29,48 @@ class App {
   }
 
   async renderPage() {
-    this._showLoading();
+    this._preRender();
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     try {
       this._main.innerHTML = await page.render();
-      // await this._sleep(1500); // Uncomment for simulate loading
+      // await this._sleep(3000); // Uncomment for simulate loading
       await page.afterRender();
-      this._hideLoading();
-    } catch (error) {
-      alert('Ada masalah jaringan. Silahkan refresh browser anda');
+      this._cleanUpSuccess();
+    } catch {
+      this._cleanUpFail();
     } finally {
-      window.scrollTo(0, 0);
-      this._skipLinkElem.addEventListener('click', (event) => {
-        event.preventDefault();
-        document.querySelector('#maincontent').focus();
-      });
+      this._cleanUpAnyway();
     }
+  }
+
+  _preRender() {
+    loadingScreen.show(this._body);
+    errorSplash.remove();
+    this._main.style.display = 'none';
+  }
+
+  _cleanUpSuccess() {
+    loadingScreen.remove();
+    this._main.style.display = 'block';
+  }
+
+  _cleanUpFail() {
+    loadingScreen.remove();
+    errorSplash.show(this._main);
+  }
+
+  _cleanUpAnyway() {
+    window.scrollTo(0, 0);
+    this._skipLinkElem.addEventListener('click', (event) => {
+      event.preventDefault();
+      this._main.focus();
+    });
   }
 
   _sleep(delay) {
     // eslint-disable-next-line no-promise-executor-return
     return new Promise((resolve) => setTimeout(resolve, delay));
-  }
-
-  _showLoading() {
-    this._main.style.display = 'none';
-    this._loading.style.display = 'flex';
-  }
-
-  _hideLoading() {
-    this._main.style.display = 'block';
-    this._loading.style.display = 'none';
   }
 }
 
