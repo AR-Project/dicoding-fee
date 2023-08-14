@@ -78,12 +78,20 @@ resto-detail svg path {
   stroke-width: 0;
 }
 
+resto-detail .categories-like-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
 resto-detail .categories-container {
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 25px;
 }
 
 resto-detail .categories-container .category {
@@ -125,14 +133,8 @@ resto-detail .reviews-container .date {
 }
 
 #like-button-container {
-  position: fixed;
-  bottom: 80px;
-  right: 35px;
-  width: 100%;
+  position: relative;
   max-width: 700px;
-  display: flex;
-  justify-content: flex-end;
-  pointer-events: none;
 }
 
 #likeButton {
@@ -145,7 +147,7 @@ resto-detail .reviews-container .date {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  pointer-events: all;
+  cursor: pointer;
 }
 
 #like-button-container svg path {
@@ -164,7 +166,6 @@ resto-detail .reviews-container .date {
   gap: 20px;
   width: 100%;
   max-width: 500px;
-  margin-bottom: 100px;
 }
 
 #review-form #name,
@@ -195,11 +196,5 @@ resto-detail .reviews-container .date {
 @media screen and (min-width: 800px) {
   resto-detail {
     padding: 60px 0;
-  }
-
-  #like-button-container {
-    bottom: 100px;
-    right: 50vw;
-    transform: translate(50%);
   }
 }

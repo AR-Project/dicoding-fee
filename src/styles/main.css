@@ -46,10 +46,14 @@ body {
 
 header {
   background: rgba(0, 0, 0, 0.368);
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  z-index: 9;
 }
 
 header>.container {
-  min-height: 75px;
+  min-height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -476,6 +480,7 @@ footer .link {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    min-height: unset;
   }
 
   #drawer {
@@ -495,6 +500,7 @@ footer .link {
 
   #drawer li {
     /* width: 75px; */
+    margin: 0;
     text-align: center;
     color: white;
     border-bottom: 3px solid rgba(255, 255, 255, 0.325);
@@ -508,6 +514,7 @@ footer .link {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    margin: 0;
   }
 
   #drawer a {

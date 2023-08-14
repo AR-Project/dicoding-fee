@@ -74,8 +74,11 @@ class RestoDetail extends HTMLElement {
         ${this._itemMenuGenerator('food', menus)}
         ${this._itemMenuGenerator('drink', menus)}
       </div>
-      <div class="categories-container">
-        ${categoryElm()}
+      <div class="categories-like-container">
+        <div class="categories-container">
+          ${categoryElm()}
+        </div>
+        <div id="like-button-container"></div>
       </div>
       ${customersReviews()}
     `;

@@ -37,6 +37,7 @@ class App {
     } catch (error) {
       alert('Ada masalah jaringan. Silahkan refresh browser anda');
     } finally {
+      window.scrollTo(0, 0);
       this._skipLinkElem.addEventListener('click', (event) => {
         event.preventDefault();
         document.querySelector('#maincontent').focus();

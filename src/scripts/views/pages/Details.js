@@ -7,12 +7,9 @@ import { reviewFormTemplate } from '../template/template-creator';
 const Detail = {
   async render() {
     const restoDetail = document.createElement('resto-detail');
-    const likeButtonContainer = document.createElement('div');
-    likeButtonContainer.id = 'like-button-container';
 
     return `
       ${restoDetail.outerHTML}
-      ${likeButtonContainer.outerHTML}
       ${reviewFormTemplate()}
     `;
   },
@@ -32,12 +29,7 @@ const Detail = {
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#like-button-container'),
       restaurant: {
-        id: restaurantResult.id,
-        name: restaurantResult.name,
-        city: restaurantResult.city,
-        pictureId: restaurantResult.pictureId,
-        rating: restaurantResult.rating,
-        description: restaurantResult.description,
+        ...restaurantResult,
       },
     });
   },
