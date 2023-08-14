@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/resto-detail.css';
+import '../styles/overlay.css';
 import './component/resto-list';
 import './component/resto-detail';
 import swRegister from './utils/sw-register';
@@ -20,6 +21,7 @@ const app = new App({
   main: mainElement,
   loading,
   skipLinkElem,
+  body: document.body,
 });
 
 window.addEventListener('hashchange', () => {
