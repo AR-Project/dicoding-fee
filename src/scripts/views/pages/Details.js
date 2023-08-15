@@ -1,4 +1,5 @@
 import RestaurantApi from '../../data/RestaurantApiSource';
+import FavoriteRestaurantsIdb from '../../data/FavoriteResto-idb';
 import UrlParser from '../../routes/url-parser';
 import LikeButtonInitiator from '../../utils/LikeButtonInitiator';
 import ReviewFormInitiator from '../../utils/ReviewFormInitiator';
@@ -31,6 +32,7 @@ const Detail = {
       restaurant: {
         ...restaurantResult,
       },
+      idb: FavoriteRestaurantsIdb,
     });
   },
 };
