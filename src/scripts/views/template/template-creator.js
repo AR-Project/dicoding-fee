@@ -19,4 +19,58 @@ const reviewFormTemplate = () => `
   <button type="submit">Buat Review</button>
 </form>`;
 
-export { createLikeButtonTemplate, createLikedButtonTemplate, reviewFormTemplate };
+const createRestaurantListSkeleton = (count) => {
+  const result = [];
+  const restoItemSkeleton = {
+    id: '#',
+    pictureUrlSmall: '/images/placeholder.png',
+    name: 'Loading',
+    description: 'Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading ',
+    pictureId: '',
+    city: 'Loading',
+    rating: 0,
+  };
+
+  for (let index = 0; index < count; index += 1) {
+    result.push(restoItemSkeleton);
+  }
+
+  return result;
+};
+
+const createRestaurantDetailSkeleton = () => ({
+  id: 'loading',
+  name: 'loading',
+  description: 'loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading loading ',
+  city: 'loading',
+  address: 'loading',
+  pictureId: 'loading',
+  pictureUrlSmall: '/images/placeholder.png',
+  pictureUrlarge: '/images/placeholder.png',
+  categories: [{ name: 'loading' }],
+  menus: {
+    foods: [{ name: 'loading' }, { name: 'loading' }, { name: 'loading' }, { name: 'loading' }],
+    drinks: [{ name: 'loading' }, { name: 'loading' }, { name: 'loading' }, { name: 'loading' }],
+  },
+  rating: 0,
+  customerReviews: [
+    {
+      name: 'loading',
+      review: 'loading',
+      date: 'loading',
+    },
+    {
+      name: 'loading',
+      review: 'loading',
+      date: 'loading',
+    },
+  ],
+});
+
+export {
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+  reviewFormTemplate,
+  createRestaurantListSkeleton,
+  createRestaurantDetailSkeleton,
+};
