@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jasmine": true
     },
     "extends": "airbnb-base",
     "parserOptions": {
@@ -15,6 +16,7 @@
         "class-methods-use-this": "off",
         "no-alert": "off",
         "no-console": "off",
-        "no-restricted-globals": "off"
+        "no-restricted-globals": "off",
+        "no-prototype-builtins": "off"
     }
 }
