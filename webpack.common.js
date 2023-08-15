@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest')
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
   entry: {
@@ -12,7 +12,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: ''
+    publicPath: '',
   },
   module: {
     rules: [
@@ -40,15 +40,14 @@ module.exports = {
       description: 'Isi Piring adalah aplikasi yang merekomendasikan anda makanan dan tempat makan sesuai selera anda!',
       background_color: '#202020',
       theme_color: '#dda311',
-      crossorigin: null, //can be null, use-credentials or anonymous
+      crossorigin: null,
       fingerprints: false,
       icons: [
         {
-          // \src\public\images\icons
-          src: path.resolve('src/public/images/icons/icon_large.png'),
-          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+          src: path.resolve('src/public/images/manifest/icon1024.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
         },
-      ]
+      ],
     }),
     new CopyWebpackPlugin({
       patterns: [

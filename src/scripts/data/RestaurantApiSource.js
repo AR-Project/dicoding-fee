@@ -11,7 +11,9 @@ class RestaurantApi {
     const response = await rawResponse.json();
     return response.restaurants.map((restaurant) => ({
       ...restaurant,
-      pictureId: API_ENDPOINT.IMAGE(restaurant.pictureId, 's'),
+      pictureUrlSmall: API_ENDPOINT.IMAGE(restaurant.pictureId, 's'),
+      pictureUrlMedium: API_ENDPOINT.IMAGE(restaurant.pictureId, 'm'),
+      pictureUrlLarge: API_ENDPOINT.IMAGE(restaurant.pictureId, 'l'),
     })); // Array of restaurant
   }
 
@@ -41,7 +43,9 @@ class RestaurantApi {
     const response = await rawResponse.json();
     return {
       ...response.restaurant,
-      pictureId: API_ENDPOINT.IMAGE(response.restaurant.pictureId, 'l'),
+      pictureUrlSmall: API_ENDPOINT.IMAGE(response.restaurant.pictureId, 's'),
+      pictureUrlMedium: API_ENDPOINT.IMAGE(response.restaurant.pictureId, 'm'),
+      pictureUrlLarge: API_ENDPOINT.IMAGE(response.restaurant.pictureId, 'l'),
     };
   }
 

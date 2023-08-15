@@ -2,10 +2,10 @@ import CacheHelper from './utils/cache-helper';
 
 const assetsToCache = [
   './',
-  './images/assets/bg.webp',
-  './images/heros/hero-image_4.jpg',
-  './images/icons/icon.svg',
-  './images/icons/icon_large.png',
+  './images/hero-large.jpg',
+  './images/hero-small.jpg',
+  './images/hero-large.webp',
+  './images/hero-small.webp',
   './icon_96x96.png',
   './icon_128x128.png',
   './icon_192x192.png',

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
     content="Isi Piring adalah website yang merekomendasikan anda makanan dan tempat makan sesuai selera anda">
-  <link rel="shortcut icon" href="/images/icons/icon.svg" type="svg">
+  <link rel="shortcut icon" href="/images/favicon.svg" type="svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -25,7 +25,7 @@
       <div class="logo-container">
         <a href="#" class="logo-link">
           <div class="logo">
-            <img src="/images/icons/icon.svg" alt="Isi Piring icon">
+            <img src="/images/favicon.svg" alt="Isi Piring icon">
             Isi Piring
           </div>
         </a>
@@ -47,8 +47,13 @@
 
   <!-- Hero Section -->
   <section class="hero-image-container">
-    <img class="hero-image" src="/images/heros/hero-image_4.jpg"
-      alt="Beautiful arrangement of food on plate with flower">
+    <picture>
+      <source type="image/webp" media="(max-width: 600px)" srcset="/images/hero-small.webp">
+      <source type="image/jpg" media="(max-width: 600px)" srcset="/images/hero-small.jpg">
+      <source type="image/webp" srcset="/images/hero-large.webp">
+      <img class="hero-image" src="/images/hero-large.jpg" alt="Beautiful arrangement of food on plate with flower">
+
+    </picture>
   </section>
 
   <!-- MAIN CONTENT AREA -->

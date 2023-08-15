@@ -18,9 +18,10 @@ class RestoDetail extends HTMLElement {
 
   render() {
     const {
-      pictureId, categories, name,
+      categories, name,
       rating, address, description,
       city, menus, customerReviews,
+      pictureUrlSmall, pictureUrlLarge,
     } = this._restaurantDetail;
 
     const divMaker = (className, content) => {
@@ -64,10 +65,10 @@ class RestoDetail extends HTMLElement {
       <div class="address">
       ${address}, ${city}
       </div>
-      <img 
-        class="resto-item-img"
-        src="${pictureId}"
-        alt="Foto lokasi dari ${name}" />
+      <picture>
+        <source media="(max-width: 600px)" srcset="${pictureUrlSmall}">
+        <img class="resto-item-img" src="${pictureUrlLarge}"  alt="Foto lokasi dari ${name}" loading="lazy"/>
+      </picture>
       <div class="desc">${description}</div>
       <div class="menu-container">
         <h2>Menu</h2>

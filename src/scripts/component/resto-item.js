@@ -8,7 +8,7 @@ class RestoItem extends HTMLElement {
 
   render() {
     const {
-      id: restaurantId, pictureId, name, rating, city,
+      id: restaurantId, pictureUrlSmall, name, rating, city,
     } = this._restaurant;
     const description = this._restaurant.description.split(' ').slice(0, 20).concat(['...']).join(' ');
 
@@ -16,8 +16,9 @@ class RestoItem extends HTMLElement {
       <a href="#/detail/${restaurantId}">
         <img 
           class="resto-item-img" 
-          src="${pictureId}" 
+          src="${pictureUrlSmall}" 
           alt="Foto lokasi ${name}"
+          loading="lazy"
         />
         <div class="rating">${icon.star}${rating}</div>
         <div class="name"><h3>${name}</h3></div>
