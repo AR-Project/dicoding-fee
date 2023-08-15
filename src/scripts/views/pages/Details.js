@@ -3,11 +3,12 @@ import FavoriteRestaurantsIdb from '../../data/FavoriteResto-idb';
 import UrlParser from '../../routes/url-parser';
 import LikeButtonInitiator from '../../utils/LikeButtonInitiator';
 import ReviewFormInitiator from '../../utils/ReviewFormInitiator';
-import { reviewFormTemplate } from '../template/template-creator';
+import { createRestaurantDetailSkeleton, reviewFormTemplate } from '../template/template-creator';
 
 const Detail = {
   async render() {
     const restoDetail = document.createElement('resto-detail');
+    restoDetail.restaurant = createRestaurantDetailSkeleton();
 
     return `
       ${restoDetail.outerHTML}

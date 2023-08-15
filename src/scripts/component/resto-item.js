@@ -10,7 +10,7 @@ class RestoItem extends HTMLElement {
     const {
       id: restaurantId, pictureUrlSmall, name, rating, city,
     } = this._restaurant;
-    const description = this._restaurant.description.split(' ').slice(0, 20).concat(['...']).join(' ');
+    const description = this._restaurant.description.slice(0, 100);
 
     this.innerHTML = `
       <a href="#/detail/${restaurantId}">

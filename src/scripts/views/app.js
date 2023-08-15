@@ -2,7 +2,6 @@ import routes from '../routes/routes';
 import UrlParser from '../routes/url-parser';
 import DrawerInitiator from '../utils/DrawerInitiator';
 import errorSplash from './overlay/error';
-import loadingScreen from './overlay/loading';
 
 class App {
   constructor({
@@ -36,7 +35,6 @@ class App {
       this._main.innerHTML = await page.render();
       // await this._sleep(3000); // Uncomment for simulate loading
       await page.afterRender();
-      this._cleanUpSuccess();
     } catch {
       this._cleanUpFail();
     } finally {
@@ -45,18 +43,10 @@ class App {
   }
 
   _preRender() {
-    loadingScreen.show(this._body);
     errorSplash.remove();
-    this._main.style.display = 'none';
-  }
-
-  _cleanUpSuccess() {
-    loadingScreen.remove();
-    this._main.style.display = 'block';
   }
 
   _cleanUpFail() {
-    loadingScreen.remove();
     errorSplash.show(this._main);
   }
 

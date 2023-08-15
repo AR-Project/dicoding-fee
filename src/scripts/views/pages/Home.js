@@ -1,4 +1,5 @@
 import RestaurantApi from '../../data/RestaurantApiSource';
+import { createRestaurantListSkeleton } from '../template/template-creator';
 
 const Home = {
   async render() {
@@ -13,10 +14,13 @@ const Home = {
     desc.innerHTML = `Kami menampilkan beberapa tempat
     makan yang cocok dengan selera anda.`;
 
+    const restoList = document.createElement('resto-list');
+    restoList.restaurants = createRestaurantListSkeleton(20);
+
     contentElement.append(
       title,
       desc,
-      document.createElement('resto-list'),
+      restoList,
     );
 
     return contentElement.outerHTML;
