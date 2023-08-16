@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   entry: {
@@ -79,9 +78,6 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
-    }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
     }),
   ],
 };
